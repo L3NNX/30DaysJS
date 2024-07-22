@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create and Append Div</title>
+</head>
+<body>
+
+    <ul>
+        <li>
+            hi
+        </li>
+    </ul>
+    <button onclick="createAndAppendDiv()">Create and Append Div</button>
+    <button onclick="Appendli()">Append</button>
+
+</body>
+    <script>
+        function createAndAppendDiv() {
+
+            var newDiv = document.createElement("div");
+            newDiv.textContent = "This is a new div element.";
+            document.body.appendChild(newDiv);
+
+
+            var newDivHTML = "<div>This is a new div element 2.</div>";
+            document.body.innerHTML += newDivHTML;
+            
+        }
+
+        function Appendli() {
+            var list = document.querySelector('ul');
+            var newLi = document.createElement('li');
+            newLi.textContent = 'new item';
+            list.appendChild(newLi);
+
+            var newLiHTML = "<li>New element 2.</li>";
+            document.body.innerHTML += newLiHTML;
+        }
+    </script>
+</html>

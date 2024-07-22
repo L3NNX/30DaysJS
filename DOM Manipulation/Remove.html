@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul id="myList">
+        <li>hi</li>
+        <li  id="remove">Hi 2</li>
+        <li id="last">hi 3</li>
+    </ul>
+
+    <button onclick="removeElement()">Remove element</button>
+    <button onclick="lastEle()">Last element</button>
+</body>
+
+<script>
+    function removeElement() {
+        const element=document.getElementById("remove")
+        element.remove();
+
+   
+    }
+
+    function lastEle() {
+        const list = document.getElementById("myList");
+        const lastElement = list.lastElementChild;
+        lastElement.remove();
+    }
+
+</script>
+</html>

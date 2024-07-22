@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="text"> Changing background text color</h1>
+
+    <h2 id="myHeading">Original Text</h2>
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="changeColor()">Change Color</button>
+
+</body>
+
+<script>
+     document.getElementById("text").innerHTML = "Changed!!";
+
+    function changeText() {
+        document.getElementById("myHeading").textContent = "Text has been changed!";
+    }
+
+    function changeColor() {
+        document.getElementById("myHeading").style.backgroundColor = "Red";
+    }
+
+
+</script>
+
+</html>
