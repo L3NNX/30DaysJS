@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="myButton">Click me</button>
+    <p id="myParagraph">This is the initial text.</p>
+
+
+    <button id="myButton1">Double-click me</button>
+    <img id="myImage"
+        src="https://w0.peakpx.com/wallpaper/530/696/HD-wallpaper-dark-rubik-s-cube-3d-3d-abstract-abstract-3d-blocks-cube-simple-background-black-background.jpg"
+        alt="My Image" style="display: none;">
+
+</body>
+
+<script>
+    const button = document.getElementById('myButton');
+    const paragraph = document.getElementById('myParagraph');
+
+    button.addEventListener('click', function () {
+        paragraph.textContent = 'The text has been changed!';
+    });
+
+
+    const button1 = document.getElementById('myButton1');
+    const image = document.getElementById('myImage');
+
+    button1.addEventListener('dblclick', function () {
+        if (image.style.display === 'none') {
+            image.style.display = 'block';
+        } else {
+            image.style.display = 'none';
+        }
+    });
+</script>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="myInput" placeholder="Type something...">
+
+    <p id="myParagraph">Current value: </p>
+</body>
+
+<script>
+    const inputField = document.getElementById('myInput');
+
+    inputField.addEventListener('keydown', function (event) {
+        console.log(`Key pressed: ${event.key}`);
+    });
+
+
+    // const inputField = document.getElementById('myInput');
+    const paragraph = document.getElementById('myParagraph');
+
+    inputField.addEventListener('keyup', function () {
+        paragraph.textContent = `Current value: ${inputField.value}`;
+    });
+</script>
+
+</html>
