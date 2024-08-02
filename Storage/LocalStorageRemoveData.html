@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Item from localStorage</title>
+</head>
+<body>
+    <h1>Remove Item from localStorage</h1>
+
+    <button id="removeItem">Remove Item</button>
+
+    <script>
+        localStorage.setItem('name', 'John Doe');
+        localStorage.setItem('email', 'john@example.com');
+        localStorage.setItem('age', '30');
+
+        // Log the contents of localStorage before removal
+        console.log('Contents of localStorage before removal:');
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            const value = localStorage.getItem(key);
+            console.log(`${key}: ${value}`);
+        }
+
+        // Get the remove item button and add a click event listener
+        const removeItemButton = document.getElementById('removeItem');
+        removeItemButton.addEventListener('click', removeItem);
+
+        function removeItem() {
+            // Remove an item from localStorage
+            localStorage.removeItem('email');
+
+            // Log the contents of localStorage after removal
+            console.log('Contents of localStorage after removal:');
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                const value = localStorage.getItem(key);
+                console.log(`${key}: ${value}`);
+            }
+        }
+    </script>
+</body>
+</html>

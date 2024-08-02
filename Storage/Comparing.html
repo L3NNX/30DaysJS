@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Example</title>
+</head>
+<body>
+    <h1>LocalStorage and SessionStorage Example</h1>
+    <button id="saveButton">Save Data</button>
+
+    <script>
+        function saveToStorages(key, value) {
+            localStorage.setItem(key, value);
+            console.log(`Saved to localStorage: ${key} = ${value}`);
+
+            sessionStorage.setItem(key, value);
+            console.log(`Saved to sessionStorage: ${key} = ${value}`);
+
+            const localStorageValue = localStorage.getItem(key);
+            console.log(`Value from localStorage: ${localStorageValue}`);
+
+            const sessionStorageValue = sessionStorage.getItem(key);
+            console.log(`Value from sessionStorage: ${sessionStorageValue}`);
+        }
+
+        document.getElementById('saveButton').addEventListener('click', function() {
+            const key = "exampleKey";
+            const value = "Hello, World!";
+            saveToStorages(key, value);
+        });

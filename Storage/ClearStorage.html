@@ -1,0 +1,37 @@
+//Write a function that clears all data from both localStorage and sessionStorage. Verify that both storages are empty.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Storage Example</title>
+</head>
+<body>
+    <h1>Clear LocalStorage and SessionStorage Example</h1>
+    <button id="clearButton">Clear Storage</button>
+
+    <script>
+        function clearAllStorage() {
+            localStorage.clear();
+            console.log("localStorage has been cleared.");
+
+            sessionStorage.clear();
+            console.log("sessionStorage has been cleared.");
+
+            if (localStorage.length === 0) {
+                console.log("localStorage is empty.");
+            } else {
+                console.log("localStorage is NOT empty.");
+            }
+
+            if (sessionStorage.length === 0) {
+                console.log("sessionStorage is empty.");
+            } else {
+                console.log("sessionStorage is NOT empty.");
+            }
+        }
+
+        document.getElementById('clearButton').addEventListener('click', clearAllStorage);
+    </script>
+</body>
+</html>

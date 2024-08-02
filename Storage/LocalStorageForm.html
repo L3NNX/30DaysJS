@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Form Data to localStorage</title>
+</head>
+<body>
+    <h1>Save Form Data to localStorage</h1>
+
+    <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit">Save</button>
+    </form>
+
+    <div id="savedData">
+        <h2>Saved Data:</h2>
+        <p>Name: <span id="savedName"></span></p>
+        <p>Email: <span id="savedEmail"></span></p>
+    </div>
+
+    <script>
+        const form = document.getElementById('userForm');
+        const savedName = document.getElementById('savedName');
+        const savedEmail = document.getElementById('savedEmail');
+
+        // Load saved data from localStorage
+        function loadSavedData() {
+            const savedData = JSON.parse(localStorage.getItem('formData'));
+            if (savedData) {
+                savedName.textContent = savedData.name;
+                savedEmail.textContent = savedData.email;
+            }
+        }
+
+        function saveFormData(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const formData = { name, email };
+            localStorage.setItem('formData', JSON.stringify(formData));
+            loadSavedData();
+            form.reset();
+        }
+
+        // Add event listener to the form
+        form.addEventListener('submit', saveFormData);
+
+   
+        loadSavedData();
+    </script>
+</body>
+</html>
