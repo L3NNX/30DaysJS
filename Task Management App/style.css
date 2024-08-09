@@ -91,10 +91,10 @@ ul li.checked{
 }
 
 ul li.checked::before{
-    background-image: url(images/green-double-circle-check-mark.png);
+    background-image: url(images/tick-160426_1920.png);
 }
 
-ui li span{
+ul li span{
     position: relative;
     right: 0;
     top: 5px;
